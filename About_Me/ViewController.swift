@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let imageContainerView: UIView = {
+    let profileContainerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 20
@@ -17,22 +17,27 @@ class ViewController: UIViewController {
         return view
     }()
     
+    let profileImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "image")
+        return imageView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        setImageContainerView()
+        setProfileContainerView()
     }
     
-    func setImageContainerView() {
-        view.addSubview(imageContainerView)
+    func setProfileContainerView() {
+        view.addSubview(profileContainerView)
         
         NSLayoutConstraint.activate([
-            imageContainerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
-            imageContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            imageContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            imageContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4),
+            profileContainerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
+            profileContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            profileContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            profileContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4),
         ])
     }
 }
