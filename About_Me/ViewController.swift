@@ -19,14 +19,14 @@ class ViewController: UIViewController {
     let locationSocialMediaView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .blue
+        view.backgroundColor = .gray
         return view
     }()
     
     let likesView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .green
+        view.backgroundColor = .yellow
         return view
     }()
     
@@ -42,16 +42,52 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
         
         setProfileContainerView()
+        setlocationSocialMediaView()
+        setLikesView()
+        setDescriptionView()
     }
     
     func setProfileContainerView() {
         view.addSubview(profileContainerView)
-
+        
         NSLayoutConstraint.activate([
             profileContainerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
-            profileContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            profileContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
-            profileContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.3),
+            profileContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            profileContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            profileContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.25),
+        ])
+    }
+    
+    func setlocationSocialMediaView() {
+        view.addSubview(locationSocialMediaView)
+        
+        NSLayoutConstraint.activate([
+            locationSocialMediaView.topAnchor.constraint(equalTo: profileContainerView.bottomAnchor, constant: 20),
+            locationSocialMediaView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            locationSocialMediaView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            locationSocialMediaView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
+        ])
+    }
+    
+    func setLikesView() {
+        view.addSubview(likesView)
+        
+        NSLayoutConstraint.activate([
+            likesView.topAnchor.constraint(equalTo: locationSocialMediaView.bottomAnchor, constant: 20),
+            likesView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            likesView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            likesView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.1),
+        ])
+    }
+    
+    func setDescriptionView() {
+        view.addSubview(descriptionView)
+        
+        NSLayoutConstraint.activate([
+            descriptionView.topAnchor.constraint(equalTo: likesView.bottomAnchor, constant: 20),
+            descriptionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            descriptionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            descriptionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.18),
         ])
     }
 }
