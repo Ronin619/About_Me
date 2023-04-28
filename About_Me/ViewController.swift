@@ -30,6 +30,13 @@ class ViewController: UIViewController {
         return view
     }()
     
+    let descriptionView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .purple
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
