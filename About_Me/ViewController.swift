@@ -37,6 +37,15 @@ class ViewController: UIViewController {
         return view
     }()
     
+    let greetingButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Say Hi 👋", for: .normal)
+        button.layer.cornerRadius = 20
+        button.backgroundColor = .green
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -45,6 +54,7 @@ class ViewController: UIViewController {
         setlocationSocialMediaView()
         setLikesView()
         setDescriptionView()
+        setGreetingButton()
     }
     
     func setProfileContainerView() {
@@ -88,6 +98,17 @@ class ViewController: UIViewController {
             descriptionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             descriptionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             descriptionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.18),
+        ])
+    }
+    
+    func setGreetingButton() {
+        view.addSubview(greetingButton)
+        
+        NSLayoutConstraint.activate([
+            greetingButton.topAnchor.constraint(equalTo: descriptionView.bottomAnchor, constant: 20),
+            greetingButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 80),
+            greetingButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -80),
+            greetingButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.07),
         ])
     }
 }
