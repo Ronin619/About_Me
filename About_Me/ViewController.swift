@@ -23,7 +23,12 @@ class ViewController: UIViewController {
         return view
     }()
     
-    
+    let likesView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .green
+        return view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
