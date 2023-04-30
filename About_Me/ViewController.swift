@@ -16,6 +16,12 @@ class ViewController: UIViewController {
         return view
     }()
     
+    let profileImageView: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
+    
     let locationSocialMediaView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -144,6 +150,7 @@ class ViewController: UIViewController {
         setTwitterLabel()
         setLinkedinImage()
         setLinkedinLabel()
+        setProfileImageView()
     }
     
     func setProfileContainerView() {
@@ -154,6 +161,19 @@ class ViewController: UIViewController {
             profileContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             profileContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             profileContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.25),
+        ])
+    }
+    
+    func setProfileImageView() {
+        profileContainerView.addSubview(profileImageView)
+        
+        profileImageView.image = UIImage(named: "profile")
+        
+        NSLayoutConstraint.activate([
+            profileImageView.topAnchor.constraint(equalTo: profileContainerView.topAnchor, constant: 20),
+            profileImageView.leadingAnchor.constraint(equalTo: profileContainerView.leadingAnchor, constant: 60),
+            profileImageView.trailingAnchor.constraint(equalTo: profileContainerView.trailingAnchor, constant: -60),
+            profileImageView.heightAnchor.constraint(equalTo: profileContainerView.heightAnchor, multiplier: 0.60),
         ])
     }
     
