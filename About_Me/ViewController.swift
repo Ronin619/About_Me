@@ -140,7 +140,7 @@ class ViewController: UIViewController {
             descriptionView.topAnchor.constraint(equalTo: likesView.bottomAnchor, constant: 20),
             descriptionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             descriptionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            descriptionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.18),
+            descriptionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.16),
         ])
     }
     
@@ -169,7 +169,7 @@ class ViewController: UIViewController {
         descriptionView.addSubview(descriptionBodyLabel)
         
         NSLayoutConstraint.activate([
-            descriptionBodyLabel.topAnchor.constraint(equalTo: descriptionView.topAnchor, constant: 10),
+            descriptionBodyLabel.topAnchor.constraint(equalTo: descriptionView.topAnchor, constant: 15),
             descriptionBodyLabel.leadingAnchor.constraint(equalTo: descriptionView.leadingAnchor, constant: 20),
             descriptionBodyLabel.trailingAnchor.constraint(equalTo: descriptionView.trailingAnchor, constant: -20),
             descriptionBodyLabel.bottomAnchor.constraint(equalTo: descriptionView.bottomAnchor, constant: -10)
