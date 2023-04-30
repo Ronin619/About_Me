@@ -37,6 +37,13 @@ class ViewController: UIViewController {
         return view
     }()
     
+    let descriptionHeaderLabel: UILabel = {
+       let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "I like iOS Development because..."
+        return label
+    }()
+    
     let greetingButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -55,6 +62,7 @@ class ViewController: UIViewController {
         setLikesView()
         setDescriptionView()
         setGreetingButton()
+        setDescriptionHeaderLabel()
     }
     
     func setProfileContainerView() {
@@ -109,6 +117,16 @@ class ViewController: UIViewController {
             greetingButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 80),
             greetingButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -80),
             greetingButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.07),
+        ])
+    }
+    
+    func setDescriptionHeaderLabel() {
+        descriptionView.addSubview(descriptionHeaderLabel)
+        
+        NSLayoutConstraint.activate([
+            descriptionHeaderLabel.topAnchor.constraint(equalTo: descriptionView.topAnchor, constant: 10),
+            descriptionHeaderLabel.leadingAnchor.constraint(equalTo: descriptionView.leadingAnchor, constant: 20),
+            descriptionHeaderLabel.trailingAnchor.constraint(equalTo: descriptionView.trailingAnchor, constant: -20),
         ])
     }
 }
