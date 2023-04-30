@@ -36,6 +36,13 @@ class ViewController: UIViewController {
         return image
     }()
     
+    let twitterLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "@RoninT619"
+        return label
+    }()
+    
     let locationLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -121,6 +128,7 @@ class ViewController: UIViewController {
         setLocationLabel()
         setDividerView()
         setTwitterImage()
+        setTwitterLabel()
     }
     
     func setProfileContainerView() {
@@ -165,6 +173,16 @@ class ViewController: UIViewController {
             twitterImage.leadingAnchor.constraint(equalTo: locationSocialMediaView.leadingAnchor, constant: 20),
             twitterImage.trailingAnchor.constraint(equalTo: locationSocialMediaView.trailingAnchor, constant: -250),
             twitterImage.heightAnchor.constraint(equalTo: locationSocialMediaView.heightAnchor, multiplier: 0.2)
+        ])
+    }
+    
+    func setTwitterLabel() {
+        locationSocialMediaView.addSubview(twitterLabel)
+        
+        NSLayoutConstraint.activate([
+            twitterLabel.topAnchor.constraint(equalTo: dividerView.bottomAnchor, constant: 15),
+            twitterLabel.leadingAnchor.constraint(equalTo: locationSocialMediaView.leadingAnchor, constant: 50),
+            locationLabel.trailingAnchor.constraint(equalTo: locationSocialMediaView.trailingAnchor, constant: -20),
         ])
     }
     
