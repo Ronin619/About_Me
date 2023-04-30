@@ -23,6 +23,19 @@ class ViewController: UIViewController {
         return view
     }()
     
+    let dividerView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .black
+        return view
+    }()
+    
+    let twitterImage: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
+    
     let locationLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -106,6 +119,8 @@ class ViewController: UIViewController {
         setFavoriteDishLabel()
         setFavoriteShowLabel()
         setLocationLabel()
+        setDividerView()
+        setTwitterImage()
     }
     
     func setProfileContainerView() {
@@ -137,6 +152,19 @@ class ViewController: UIViewController {
             locationLabel.topAnchor.constraint(equalTo: locationSocialMediaView.topAnchor, constant: 10),
             locationLabel.leadingAnchor.constraint(equalTo: locationSocialMediaView.leadingAnchor, constant: 20),
             locationLabel.trailingAnchor.constraint(equalTo: locationSocialMediaView.trailingAnchor, constant: -20),
+        ])
+    }
+    
+    func setTwitterImage() {
+        locationSocialMediaView.addSubview(twitterImage)
+        
+        twitterImage.image = UIImage(named: "twitter")
+        
+        NSLayoutConstraint.activate([
+            twitterImage.topAnchor.constraint(equalTo: dividerView.bottomAnchor, constant: 10),
+            twitterImage.leadingAnchor.constraint(equalTo: locationSocialMediaView.leadingAnchor, constant: 20),
+            twitterImage.trailingAnchor.constraint(equalTo: locationSocialMediaView.trailingAnchor, constant: -250),
+            twitterImage.heightAnchor.constraint(equalTo: locationSocialMediaView.heightAnchor, multiplier: 0.2)
         ])
     }
     
@@ -221,6 +249,17 @@ class ViewController: UIViewController {
             favoriteShowLabel.topAnchor.constraint(equalTo: interestLabel.bottomAnchor, constant: 10),
             favoriteShowLabel.leadingAnchor.constraint(equalTo: likesView.leadingAnchor, constant: 120),
             favoriteShowLabel.bottomAnchor.constraint(equalTo: likesView.bottomAnchor, constant: -10)
+        ])
+    }
+    
+    func setDividerView() {
+        locationSocialMediaView.addSubview(dividerView)
+        
+        NSLayoutConstraint.activate([
+            dividerView.topAnchor.constraint(equalTo: locationLabel.bottomAnchor, constant: 5),
+            dividerView.leadingAnchor.constraint(equalTo: locationSocialMediaView.leadingAnchor),
+            dividerView.trailingAnchor.constraint(equalTo: locationSocialMediaView.trailingAnchor),
+            dividerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.001)
         ])
     }
 }
