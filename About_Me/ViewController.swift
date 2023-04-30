@@ -44,6 +44,16 @@ class ViewController: UIViewController {
         return label
     }()
     
+    let descriptionBodyLabel: UILabel = {
+       let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 10)
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 0
+        label.text = "I wanted to focus on iOS development as I am more interested in mobile app development. I have owned an apple device for many years and use iOS apps exclusively. As most people carry a smart phone, it simply makes sense to focus on building mobile apps."
+        return label
+    }()
+    
     let greetingButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -63,6 +73,7 @@ class ViewController: UIViewController {
         setDescriptionView()
         setGreetingButton()
         setDescriptionHeaderLabel()
+        setDescriptionBodyLabel()
     }
     
     func setProfileContainerView() {
@@ -127,6 +138,17 @@ class ViewController: UIViewController {
             descriptionHeaderLabel.topAnchor.constraint(equalTo: descriptionView.topAnchor, constant: 10),
             descriptionHeaderLabel.leadingAnchor.constraint(equalTo: descriptionView.leadingAnchor, constant: 20),
             descriptionHeaderLabel.trailingAnchor.constraint(equalTo: descriptionView.trailingAnchor, constant: -20),
+        ])
+    }
+    
+    func setDescriptionBodyLabel() {
+        descriptionView.addSubview(descriptionBodyLabel)
+        
+        NSLayoutConstraint.activate([
+            descriptionBodyLabel.topAnchor.constraint(equalTo: descriptionView.topAnchor, constant: 10),
+            descriptionBodyLabel.leadingAnchor.constraint(equalTo: descriptionView.leadingAnchor, constant: 20),
+            descriptionBodyLabel.trailingAnchor.constraint(equalTo: descriptionView.trailingAnchor, constant: -20),
+            descriptionBodyLabel.bottomAnchor.constraint(equalTo: descriptionView.bottomAnchor, constant: -10)
         ])
     }
 }
