@@ -30,10 +30,31 @@ class ViewController: UIViewController {
         return view
     }()
     
+    let interestLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "❤️  Electric guitar, judo, traveling"
+        return label
+    }()
+    
+    let favoriteDishLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "🍴 Sushi"
+        return label
+    }()
+    
+    let favoriteShowLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "📺 The Simpsons"
+        return label
+    }()
+    
     let descriptionView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .purple
+        view.backgroundColor = .systemGreen
         return view
     }()
     
@@ -59,7 +80,7 @@ class ViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Say Hi 👋", for: .normal)
         button.layer.cornerRadius = 20
-        button.backgroundColor = .green
+        button.backgroundColor = .orange
         return button
     }()
     
