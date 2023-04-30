@@ -49,6 +49,13 @@ class ViewController: UIViewController {
         return image
     }()
     
+    let linkedinLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "linkedin.com/in/eytam"
+        return label
+    }()
+    
     let locationLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -136,6 +143,7 @@ class ViewController: UIViewController {
         setTwitterImage()
         setTwitterLabel()
         setLinkedinImage()
+        setLinkedinLabel()
     }
     
     func setProfileContainerView() {
@@ -199,10 +207,20 @@ class ViewController: UIViewController {
         linkedinImage.image = UIImage(named: "linkedin")
         
         NSLayoutConstraint.activate([
-            linkedinImage.topAnchor.constraint(equalTo: twitterImage.bottomAnchor, constant: 15),
+            linkedinImage.topAnchor.constraint(equalTo: twitterImage.bottomAnchor, constant: 10),
             linkedinImage.leadingAnchor.constraint(equalTo: locationSocialMediaView.leadingAnchor, constant: 20),
             linkedinImage.trailingAnchor.constraint(equalTo: locationSocialMediaView.trailingAnchor, constant: -250),
             linkedinImage.heightAnchor.constraint(equalTo: locationSocialMediaView.heightAnchor, multiplier: 0.2)
+        ])
+    }
+    
+    func setLinkedinLabel() {
+        locationSocialMediaView.addSubview(linkedinLabel)
+        
+        NSLayoutConstraint.activate([
+            linkedinLabel.topAnchor.constraint(equalTo: twitterLabel.bottomAnchor, constant: 15),
+            linkedinLabel.leadingAnchor.constraint(equalTo: locationSocialMediaView.leadingAnchor, constant: 50),
+            linkedinLabel.trailingAnchor.constraint(equalTo: locationSocialMediaView.trailingAnchor, constant: -20),
         ])
     }
     
