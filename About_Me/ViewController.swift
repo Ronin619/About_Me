@@ -95,6 +95,9 @@ class ViewController: UIViewController {
         setGreetingButton()
         setDescriptionHeaderLabel()
         setDescriptionBodyLabel()
+        setInterestLabel()
+        setFavoriteDishLabel()
+        setFavoriteShowLabel()
     }
     
     func setProfileContainerView() {
@@ -170,6 +173,36 @@ class ViewController: UIViewController {
             descriptionBodyLabel.leadingAnchor.constraint(equalTo: descriptionView.leadingAnchor, constant: 20),
             descriptionBodyLabel.trailingAnchor.constraint(equalTo: descriptionView.trailingAnchor, constant: -20),
             descriptionBodyLabel.bottomAnchor.constraint(equalTo: descriptionView.bottomAnchor, constant: -10)
+        ])
+    }
+    
+    func setInterestLabel() {
+        likesView.addSubview(interestLabel)
+        
+        NSLayoutConstraint.activate([
+            interestLabel.topAnchor.constraint(equalTo: likesView.topAnchor, constant: 10),
+            interestLabel.leadingAnchor.constraint(equalTo: likesView.leadingAnchor, constant: 20),
+            interestLabel.trailingAnchor.constraint(equalTo: likesView.trailingAnchor, constant: -20)
+        ])
+    }
+    
+    func setFavoriteDishLabel() {
+        likesView.addSubview(favoriteDishLabel)
+        
+        NSLayoutConstraint.activate([
+            favoriteDishLabel.topAnchor.constraint(equalTo: interestLabel.bottomAnchor, constant: 10),
+            favoriteDishLabel.leadingAnchor.constraint(equalTo: likesView.leadingAnchor, constant: 20),
+            favoriteDishLabel.bottomAnchor.constraint(equalTo: likesView.bottomAnchor, constant: -10)
+        ])
+    }
+    
+    func setFavoriteShowLabel() {
+        likesView.addSubview(favoriteShowLabel)
+        
+        NSLayoutConstraint.activate([
+            favoriteShowLabel.topAnchor.constraint(equalTo: interestLabel.bottomAnchor, constant: 10),
+            favoriteShowLabel.leadingAnchor.constraint(equalTo: likesView.leadingAnchor, constant: 120),
+            favoriteShowLabel.bottomAnchor.constraint(equalTo: likesView.bottomAnchor, constant: -10)
         ])
     }
 }
