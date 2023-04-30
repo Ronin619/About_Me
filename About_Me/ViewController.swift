@@ -23,6 +23,13 @@ class ViewController: UIViewController {
         return view
     }()
     
+    let locationLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "📍 Brooklyn, NY"
+        return label
+    }()
+    
     let likesView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -98,6 +105,7 @@ class ViewController: UIViewController {
         setInterestLabel()
         setFavoriteDishLabel()
         setFavoriteShowLabel()
+        setLocationLabel()
     }
     
     func setProfileContainerView() {
@@ -119,6 +127,16 @@ class ViewController: UIViewController {
             locationSocialMediaView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             locationSocialMediaView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             locationSocialMediaView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
+        ])
+    }
+    
+    func setLocationLabel() {
+        locationSocialMediaView.addSubview(locationLabel)
+        
+        NSLayoutConstraint.activate([
+            locationLabel.topAnchor.constraint(equalTo: locationSocialMediaView.topAnchor, constant: 10),
+            locationLabel.leadingAnchor.constraint(equalTo: locationSocialMediaView.leadingAnchor, constant: 20),
+            locationLabel.trailingAnchor.constraint(equalTo: locationSocialMediaView.trailingAnchor, constant: -20),
         ])
     }
     
@@ -180,7 +198,7 @@ class ViewController: UIViewController {
         likesView.addSubview(interestLabel)
         
         NSLayoutConstraint.activate([
-            interestLabel.topAnchor.constraint(equalTo: likesView.topAnchor, constant: 10),
+            interestLabel.topAnchor.constraint(equalTo: likesView.topAnchor, constant: 5),
             interestLabel.leadingAnchor.constraint(equalTo: likesView.leadingAnchor, constant: 20),
             interestLabel.trailingAnchor.constraint(equalTo: likesView.trailingAnchor, constant: -20)
         ])
