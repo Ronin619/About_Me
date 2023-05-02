@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Eric Tam"
-        label.textColor = .white
+        label.textColor = .blue
         return label
     }()
     
