@@ -94,12 +94,14 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "❤️  Electric guitar, judo, traveling"
+        label.font = UIFont(name: "Roboto-Regular", size: 15)
         return label
     }()
     
     let favoriteDishLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont(name: "Roboto-Regular", size: 15)
         label.text = "🍴 Sushi"
         return label
     }()
@@ -107,6 +109,7 @@ class ViewController: UIViewController {
     let favoriteShowLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont(name: "Roboto-Regular", size: 15)
         label.text = "📺 The Simpsons"
         return label
     }()
@@ -346,7 +349,7 @@ class ViewController: UIViewController {
         likesView.addSubview(favoriteDishLabel)
         
         NSLayoutConstraint.activate([
-            favoriteDishLabel.topAnchor.constraint(equalTo: interestLabel.bottomAnchor, constant: 10),
+            favoriteDishLabel.topAnchor.constraint(equalTo: interestLabel.bottomAnchor, constant: 5),
             favoriteDishLabel.leadingAnchor.constraint(equalTo: likesView.leadingAnchor, constant: 20),
             favoriteDishLabel.bottomAnchor.constraint(equalTo: likesView.bottomAnchor, constant: -10)
         ])
