@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  About_Me
-//
-//  Created by Eric Tam on 4/20/23.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -20,6 +13,14 @@ class ViewController: UIViewController {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
+    }()
+    
+    let nameLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Eric Tam"
+        label.textColor = .white
+        return label
     }()
     
     let locationSocialMediaView: UIView = {
@@ -135,7 +136,7 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
         
         setProfileContainerView()
-        setlocationSocialMediaView()
+        setLocationSocialMediaView()
         setLikesView()
         setDescriptionView()
         setGreetingButton()
@@ -151,6 +152,7 @@ class ViewController: UIViewController {
         setLinkedinImage()
         setLinkedinLabel()
         setProfileImageView()
+        setNameLabel()
     }
     
     func setProfileContainerView() {
@@ -160,7 +162,7 @@ class ViewController: UIViewController {
             profileContainerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
             profileContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             profileContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            profileContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.25),
+            profileContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.30),
         ])
     }
     
@@ -177,7 +179,16 @@ class ViewController: UIViewController {
         ])
     }
     
-    func setlocationSocialMediaView() {
+    func setNameLabel() {
+        profileContainerView.addSubview(nameLabel)
+        
+        NSLayoutConstraint.activate([
+            nameLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 10),
+            nameLabel.leadingAnchor.constraint(equalTo: profileContainerView.leadingAnchor, constant: 110)
+        ])
+    }
+    
+    func setLocationSocialMediaView() {
         view.addSubview(locationSocialMediaView)
         
         NSLayoutConstraint.activate([
