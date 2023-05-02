@@ -221,7 +221,7 @@ class ViewController: UIViewController {
             locationSocialMediaView.topAnchor.constraint(equalTo: profileContainerView.bottomAnchor, constant: 20),
             locationSocialMediaView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             locationSocialMediaView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            locationSocialMediaView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
+            locationSocialMediaView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.13),
         ])
     }
     
@@ -288,7 +288,7 @@ class ViewController: UIViewController {
             likesView.topAnchor.constraint(equalTo: locationSocialMediaView.bottomAnchor, constant: 20),
             likesView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             likesView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            likesView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.1),
+            likesView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.07),
         ])
     }
     
@@ -299,7 +299,7 @@ class ViewController: UIViewController {
             descriptionView.topAnchor.constraint(equalTo: likesView.bottomAnchor, constant: 20),
             descriptionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             descriptionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            descriptionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.16),
+            descriptionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
         ])
     }
     
@@ -349,7 +349,7 @@ class ViewController: UIViewController {
         likesView.addSubview(favoriteDishLabel)
         
         NSLayoutConstraint.activate([
-            favoriteDishLabel.topAnchor.constraint(equalTo: interestLabel.bottomAnchor, constant: 5),
+            favoriteDishLabel.topAnchor.constraint(equalTo: interestLabel.bottomAnchor, constant: 10),
             favoriteDishLabel.leadingAnchor.constraint(equalTo: likesView.leadingAnchor, constant: 20),
             favoriteDishLabel.bottomAnchor.constraint(equalTo: likesView.bottomAnchor, constant: -10)
         ])
