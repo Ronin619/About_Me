@@ -71,6 +71,7 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "linkedin.com/in/eytam"
+        label.font = UIFont(name: "Roboto-Regular", size: 15)
         return label
     }()
     
