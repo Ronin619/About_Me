@@ -194,8 +194,8 @@ class ViewController: UIViewController {
         profileContainerView.addSubview(nameLabel)
         
         NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 10),
-            nameLabel.leadingAnchor.constraint(equalTo: profileContainerView.leadingAnchor, constant: 110)
+            nameLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 5),
+            nameLabel.leadingAnchor.constraint(equalTo: profileContainerView.leadingAnchor, constant: 100)
         ])
     }
     
@@ -204,7 +204,7 @@ class ViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             pronounLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5),
-            pronounLabel.leadingAnchor.constraint(equalTo: profileContainerView.leadingAnchor, constant: 105)
+            pronounLabel.leadingAnchor.constraint(equalTo: profileContainerView.leadingAnchor, constant: 110)
         ])
     }
     
