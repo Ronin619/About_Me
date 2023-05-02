@@ -5,7 +5,7 @@ class ViewController: UIViewController {
     let profileContainerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .cyan
+        view.backgroundColor = UIColor(named: "profileBlue")
         return view
     }()
     
@@ -23,10 +23,18 @@ class ViewController: UIViewController {
         return label
     }()
     
+    let pronounLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "he/him/his"
+        label.textColor = .white
+        return label
+    }()
+    
     let locationSocialMediaView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .gray
+        view.backgroundColor = UIColor(named: "sand")
         return view
     }()
     
@@ -73,7 +81,7 @@ class ViewController: UIViewController {
     let likesView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .yellow
+        view.backgroundColor = UIColor(named: "sand")
         return view
     }()
     
@@ -101,7 +109,7 @@ class ViewController: UIViewController {
     let descriptionView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .systemGreen
+        view.backgroundColor = UIColor(named: "sand")
         return view
     }()
     
@@ -127,7 +135,7 @@ class ViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Say Hi 👋", for: .normal)
         button.layer.cornerRadius = 20
-        button.backgroundColor = .orange
+        button.backgroundColor = UIColor(named: "redOrange")
         return button
     }()
     
@@ -153,6 +161,7 @@ class ViewController: UIViewController {
         setLinkedinLabel()
         setProfileImageView()
         setNameLabel()
+        setPronounLabel()
     }
     
     func setProfileContainerView() {
@@ -185,6 +194,15 @@ class ViewController: UIViewController {
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 10),
             nameLabel.leadingAnchor.constraint(equalTo: profileContainerView.leadingAnchor, constant: 110)
+        ])
+    }
+    
+    func setPronounLabel() {
+        profileContainerView.addSubview(pronounLabel)
+        
+        NSLayoutConstraint.activate([
+            pronounLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5),
+            pronounLabel.leadingAnchor.constraint(equalTo: profileContainerView.leadingAnchor, constant: 105)
         ])
     }
     
