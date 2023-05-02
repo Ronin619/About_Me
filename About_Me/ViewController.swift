@@ -125,13 +125,14 @@ class ViewController: UIViewController {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "I like iOS Development because..."
+        label.font = UIFont(name: "Roboto-Bold", size: 15)
         return label
     }()
     
     let descriptionBodyLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 10)
+        label.font = UIFont(name: "Roboto-Regular", size: 10)
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
         label.text = "I wanted to focus on iOS development as I am more interested in mobile app development. I have owned an apple device for many years and use iOS apps exclusively. As most people carry a smart phone, it simply makes sense to focus on building mobile apps."
@@ -299,7 +300,7 @@ class ViewController: UIViewController {
             descriptionView.topAnchor.constraint(equalTo: likesView.bottomAnchor, constant: 20),
             descriptionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             descriptionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            descriptionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
+            descriptionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.12),
         ])
     }
     
@@ -328,7 +329,7 @@ class ViewController: UIViewController {
         descriptionView.addSubview(descriptionBodyLabel)
         
         NSLayoutConstraint.activate([
-            descriptionBodyLabel.topAnchor.constraint(equalTo: descriptionView.topAnchor, constant: 15),
+            descriptionBodyLabel.topAnchor.constraint(equalTo: descriptionView.topAnchor, constant: 32),
             descriptionBodyLabel.leadingAnchor.constraint(equalTo: descriptionView.leadingAnchor, constant: 20),
             descriptionBodyLabel.trailingAnchor.constraint(equalTo: descriptionView.trailingAnchor, constant: -20),
             descriptionBodyLabel.bottomAnchor.constraint(equalTo: descriptionView.bottomAnchor, constant: -10)
