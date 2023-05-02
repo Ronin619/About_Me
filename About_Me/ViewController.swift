@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Eric Tam"
         label.textColor = .white
+        label.font = UIFont(name: "Roboto-Bold", size: 24)
         return label
     }()
     
