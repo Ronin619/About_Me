@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "he/him/his"
         label.textColor = .white
+        label.font = UIFont(name: "Roboto-Italic", size: 15)
         return label
     }()
     
