@@ -145,7 +145,7 @@ class ViewController: UIViewController {
         button.setTitle("Say Hi 👋", for: .normal)
         button.layer.cornerRadius = 20
         button.backgroundColor = UIColor(named: "redOrange")
-        button.addTarget(self, action: #selector(sayHiButtonPressed), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(sayHiButtonPressed), for: .touchUpInside)
         return button
     }()
     
