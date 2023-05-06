@@ -145,6 +145,7 @@ class ViewController: UIViewController {
         button.setTitle("Say Hi 👋", for: .normal)
         button.layer.cornerRadius = 20
         button.backgroundColor = UIColor(named: "redOrange")
+        button.addTarget(self, action: #selector(sayHiButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -375,5 +376,13 @@ class ViewController: UIViewController {
             dividerView.trailingAnchor.constraint(equalTo: locationSocialMediaView.trailingAnchor),
             dividerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.001)
         ])
+    }
+    
+    @objc func sayHiButtonPressed() {
+        let alert = UIAlertController(title: "", message: "Hello! 👋", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            NSLog("The \"OK\" alert occured.")
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 }
